@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>pixelgames</title>
+    <link rel="stylesheet" href="styles/style.css" />
+    <link rel="icon" type="image/x-icon" href="assets/logo/icon.ico" />
+  </head>
+  <body>
+    <header>
+      <nav class="h-nav">
+        <img class="h-nav-logo" src="assets/logo/logo.png" />
+        <div class="h-nav-div">
+          <ul>
+            <li><a href="index.html">Games</a></li>
+            <li><a href="blog.html">Blog</a></li>
+
+            <li><a href="articles.html">Articles</a></li>
+
+            <li><a href="about.html">About</a></li>
+          </ul>
+          <ul>
+            <li>
+              <button type="button" class="find" aria-label="Open search">
+                <img
+                  src="./assets/icons/ui/find.svg"
+                  alt=""
+                  width="22"
+                  height="22"
+                />
+              </button>
+            </li>
+            <li class="account">
+              <img
+                src="./assets/icons/ui/user.svg"
+                alt=""
+                width="24"
+                height="24"
+              />
+              <p>My Account</p>
+            </li>
+          </ul>
+        </div>
+      </nav>
+      <!-- classes: hero, hero-accent -->
+      <section class="hero">
+        <h1>
+          GOOD GAMES.<br />
+          <span class="hero-accent">NO GUESSWORK.</span>
+        </h1>
+        <p>
+          Discover hand-picked pixel games worth getting lost in.
+          <br />
+          From tiny indie gems to massive retro worlds.
+        </p>
+        <!-- classes: search-bar, search-bar input, search-bar button,
+               search-suggestions, search-suggestions span, search-recommendations,
+               search-options, search-option  -->
+
+        <div class="search">
+          <div class="search-bar">
+            <input
+              id="search"
+              type="search"
+              placeholder="Search for games, genres or online options..."
+            />
+            <button type="button">Search</button>
+          </div>
+
+          <div class="search-suggestions">
+            <span>Try:</span>
+            <ul id="search-recommendations" class="search-options"></ul>
+          </div>
+        </div>
+      </section>
+    </header>
+    <!-- classes: main-nav, main-nav ul, main-nav ul li, active, inactive -->
+    <main>
+      <nav class="main-nav">
+        <ul>
+          <li>
+            <button class="active">
+              <img src="./assets/icons/ui/all.svg" alt="" class="genre-icon" />
+              <span>All</span>
+            </button>
+          </li>
+          <li>
+            <button class="inactive">
+              <img
+                src="./assets/icons/genres/rpg.svg"
+                alt=""
+                class="genre-icon"
+              />
+              <span>RPG</span>
+            </button>
+          </li>
+          <li>
+            <button class="inactive">
+              <img
+                src="./assets/icons/genres/action.svg"
+                alt=""
+                class="genre-icon"
+              />
+              <span>Action</span>
+            </button>
+          </li>
+          <li>
+            <button class="inactive">
+              <img
+                src="./assets/icons/genres/adventure.svg"
+                alt=""
+                class="genre-icon"
+              />
+              <span>Adventure</span>
+            </button>
+          </li>
+          <li>
+            <button class="inactive">
+              <img
+                src="./assets/icons/genres/strategy.svg"
+                alt=""
+                class="genre-icon"
+              />
+              <span>Strategy</span>
+            </button>
+          </li>
+          <li>
+            <button class="inactive">
+              <img
+                src="./assets/icons/genres/simulation.svg"
+                alt=""
+                class="genre-icon"
+              />
+              <span>Simulation</span>
+            </button>
+          </li>
+          <li>
+            <button class="inactive">
+              <img
+                src="./assets/icons/genres/survival.svg"
+                alt=""
+                class="genre-icon"
+              />
+              <span>Survival</span>
+            </button>
+          </li>
+          <li>
+            <button class="inactive">
+              <img
+                src="./assets/icons/genres/racing.svg"
+                alt=""
+                class="genre-icon"
+              />
+              <span>Racing</span>
+            </button>
+          </li>
+        </ul>
+        <div class="main-sort">
+          <label for="sort">Sort by:</label>
+
+          <select id="sort" name="sort">
+            <option value="popular">Popularity</option>
+            <option value="title-asc">Name: A–Z</option>
+            <option value="title-desc">Name: Z–A</option>
+            <option value="rating-desc">Rating: High–Low</option>
+            <option value="rating-asc">Rating: Low–High</option>
+          </select>
+        </div>
+      </nav>
+      <div id="cardsList" class="cards"></div>
+    </main>
+    <footer>
+      <div>pixelgames</div>
+      <div></div>
+    </footer>
+    <script src="scripts/app.js"></script>
+  </body>
+</html>
