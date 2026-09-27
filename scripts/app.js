@@ -193,7 +193,7 @@ function renderPage() {
     let text = ``;
 
     for (let i = 0; i < numbers.length; i++) {
-      text += `<li class="search-option">${randomTags[numbers[i]]}</li>`;
+      text += `<li class="search-option"><button>${randomTags[numbers[i]]}</button></li>`;
     }
     randomOptions.innerHTML = text;
   }

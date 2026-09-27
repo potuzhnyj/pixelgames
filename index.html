@@ -9,12 +9,12 @@
   </head>
   <body>
     <header>
-      <nav class="h-nav">
-        <img class="h-nav-logo" src="assets/logo/logo.png" />
+      <nav class="h-nav" aria-label="Main navigation">
+        <img class="h-nav-logo" src="assets/logo/logo.png" alt="pixelgames" />
         <div class="h-nav-div">
           <ul>
             <li><a href="index.html">Games</a></li>
-            <li><a href="blog.html">Blog</a></li>
+            <li><a href="blog.html">Forum</a></li>
 
             <li><a href="articles.html">Articles</a></li>
 
@@ -43,7 +43,6 @@
           </ul>
         </div>
       </nav>
-      <!-- classes: hero, hero-accent -->
       <section class="hero">
         <h1>
           GOOD GAMES.<br />
@@ -54,15 +53,12 @@
           <br />
           From tiny indie gems to massive retro worlds.
         </p>
-        <!-- classes: search-bar, search-bar input, search-bar button,
-               search-suggestions, search-suggestions span, search-recommendations,
-               search-options, search-option  -->
-
         <div class="search">
           <div class="search-bar">
             <input
               id="search"
               type="search"
+              aria-label="Search games, genres or game modes"
               placeholder="Search for games, genres or online options..."
             />
             <button type="button">Search</button>
@@ -75,85 +71,45 @@
         </div>
       </section>
     </header>
-    <!-- classes: main-nav, main-nav ul, main-nav ul li, active, inactive -->
     <main>
-      <nav class="main-nav">
-        <ul>
+      <nav class="main-nav" aria-label="Game filters and sorting">
+        <ul class="game-filters">
           <li>
-            <button class="active">
+            <button type="button" id="reset-filters" class="active">
               <img src="./assets/icons/ui/all.svg" alt="" class="genre-icon" />
-              <span>All</span>
+              <span>All games</span>
             </button>
           </li>
           <li>
-            <button class="inactive">
-              <img
-                src="./assets/icons/genres/rpg.svg"
-                alt=""
-                class="genre-icon"
-              />
-              <span>RPG</span>
-            </button>
+            <select id="filter-genre" name="genre" aria-label="Genre">
+              <option value="">Genre</option>
+              <option value="RPG">RPG</option>
+              <option value="Action">Action</option>
+              <option value="Adventure">Adventure</option>
+              <option value="Strategy">Strategy</option>
+              <option value="Simulation">Simulation</option>
+              <option value="Survival">Survival</option>
+              <option value="Racing">Racing</option>
+            </select>
           </li>
           <li>
-            <button class="inactive">
-              <img
-                src="./assets/icons/genres/action.svg"
-                alt=""
-                class="genre-icon"
-              />
-              <span>Action</span>
-            </button>
+            <select id="filter-gameplay" name="gameplay" aria-label="Gameplay">
+              <option value="">Gameplay</option>
+              <option value="Open World">Open World</option>
+              <option value="Exploration">Exploration</option>
+              <option value="Story Rich">Story Rich</option>
+              <option value="Base Building">Base Building</option>
+              <option value="Crafting">Crafting</option>
+              <option value="Puzzle">Puzzle</option>
+            </select>
           </li>
           <li>
-            <button class="inactive">
-              <img
-                src="./assets/icons/genres/adventure.svg"
-                alt=""
-                class="genre-icon"
-              />
-              <span>Adventure</span>
-            </button>
-          </li>
-          <li>
-            <button class="inactive">
-              <img
-                src="./assets/icons/genres/strategy.svg"
-                alt=""
-                class="genre-icon"
-              />
-              <span>Strategy</span>
-            </button>
-          </li>
-          <li>
-            <button class="inactive">
-              <img
-                src="./assets/icons/genres/simulation.svg"
-                alt=""
-                class="genre-icon"
-              />
-              <span>Simulation</span>
-            </button>
-          </li>
-          <li>
-            <button class="inactive">
-              <img
-                src="./assets/icons/genres/survival.svg"
-                alt=""
-                class="genre-icon"
-              />
-              <span>Survival</span>
-            </button>
-          </li>
-          <li>
-            <button class="inactive">
-              <img
-                src="./assets/icons/genres/racing.svg"
-                alt=""
-                class="genre-icon"
-              />
-              <span>Racing</span>
-            </button>
+            <select id="filter-mode" name="mode" aria-label="Game mode">
+              <option value="">Game mode</option>
+              <option value="Single-player">Single-player</option>
+              <option value="Co-op">Co-op</option>
+              <option value="Multiplayer">Multiplayer</option>
+            </select>
           </li>
         </ul>
         <div class="main-sort">
@@ -172,7 +128,6 @@
     </main>
     <footer>
       <div>pixelgames</div>
-      <div></div>
     </footer>
     <script src="scripts/app.js"></script>
   </body>

@@ -33,16 +33,16 @@
 
 /* Theme */
 :root {
-  --bg: #0d0e09; /* основний фон */
-  --card-bg: #0c0c0a; /* фон карток */
-  --card-bg-hover: #1b1b17; /* фон карток при наведенні */
+  --bg: #0d0e09;
+  --card-bg: #0c0c0a;
+  --card-bg-hover: #1b1b17;
 
-  --text: #efe4ce; /* кремовий текст і лого */
-  --accent: #b33536; /* червоний заголовок */
-  --active-bg: #b63637; /* червоні кнопки */
+  --text: #efe4ce;
+  --accent: #b33536;
+  --active-bg: #b63637;
   --active-bg-chosen: #b63636d2;
-  --border: #63625d; /* рамки й розділювачі */
-  --text-muted: #858580; /* орієнтир для другорядного тексту */
+  --border: #63625d;
+  --text-muted: #858580;
 
   --font-tags: 10px;
   --font-footer: 10px;
@@ -65,18 +65,34 @@
 *,
 *::before,
 *::after {
-  font-family: "Minecraft", monospace;
-  font-weight: 400;
-
   margin: 0;
   padding: 0;
   border: 0;
-  cursor: var(--cursor-default);
-  color: var(--text);
-  list-style-type: none;
-  text-transform: uppercase;
   box-sizing: border-box;
 }
+
+ul {
+  list-style: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: inherit;
+}
+
+button,
+input,
+select {
+  font-family: inherit;
+  font-weight: inherit;
+  color: inherit;
+  text-transform: inherit;
+}
+
 a {
   color: inherit;
   text-decoration: none;
@@ -84,22 +100,25 @@ a {
 
 body {
   background-color: var(--bg);
-  height: 100%;
-  font-family: "IBM Plex Mono", monospace;
-  padding: 10px 40px;
+  font-family: "Minecraft", monospace;
+  font-weight: 400;
+  color: var(--text);
+  text-transform: uppercase;
+  cursor: var(--cursor-default);
+  padding: 10px clamp(16px, 2.5vw, 40px);
 }
 
 a,
 button,
-input,
-select,
-.find,
-.h-nav li,
-.main-nav li {
+select {
   cursor: var(--cursor-pointer);
 }
-ul li.account,
-.account * {
+
+input[type="search"] {
+  cursor: text;
+}
+
+.account {
   cursor: var(--cursor-disabled);
 }
 
@@ -108,15 +127,22 @@ header {
   display: flex;
   padding-top: 20px;
   flex-direction: column;
-  background-image: url("../assets/art/hero-castle.png");
-  background-size: 55% auto;
-  background-position: 100% 20%;
+  background-image:
+    linear-gradient(to bottom, #0d0e09b3, transparent 25%, #0d0e09 100%),
+    linear-gradient(to right, #0d0e09f2 10%, #0d0e0999 50%, #0d0e0926),
+    url("../assets/art/hero-castle.png");
+  background-size: cover;
+  background-position:
+    center,
+    center,
+    70% center;
   background-repeat: no-repeat;
   border-bottom: 1px solid var(--border);
 }
 
 .h-nav {
-  height: 50px;
+  min-height: 50px;
+  flex-wrap: wrap;
 }
 
 .h-nav,
@@ -124,20 +150,20 @@ header {
 .h-nav-div ul {
   font-size: var(--font-nav);
   display: flex;
-  gap: 40px;
+  gap: clamp(16px, 2vw, 40px);
   align-items: center;
 }
 
-.h-nav-div,
 .h-nav-div ul {
-  height: 100%;
+  flex-wrap: wrap;
 }
 
 .h-nav-logo {
-  width: 500px;
-  height: 90px;
+  width: clamp(240px, 32vw, 500px);
+  max-width: 100%;
+  height: auto;
   cursor: var(--cursor-heart);
-  transition: all 1232ms;
+  transition: transform 1232ms;
 }
 
 .h-nav-logo:hover {
@@ -145,7 +171,9 @@ header {
 }
 
 .h-nav-div {
-  flex: 1;
+  flex: 1 1 600px;
+  flex-wrap: wrap;
+  min-width: 0;
   justify-content: space-between;
 }
 
@@ -181,13 +209,14 @@ button.find {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  height: 400px;
+  min-height: 400px;
   width: 50%;
+  padding: 24px 0;
   gap: 15px;
 }
 
 .hero h1 {
-  font-size: 74px;
+  font-size: clamp(32px, 4.1vw, 74px);
   line-height: 0.9;
   font-weight: 700;
 }
@@ -217,6 +246,7 @@ button.find {
 }
 .search-bar input {
   flex: 2;
+  min-width: 0;
   text-transform: none;
   background-color: transparent;
   background-image: url("../assets/icons/ui/find.svg");
@@ -241,10 +271,15 @@ button.find {
   font-size: 14px;
 }
 
-.search-suggestions {
+.search-suggestions,
+.search-options {
   display: flex;
+  flex-wrap: wrap;
   gap: 30px;
   align-items: center;
+}
+
+.search-suggestions {
   font-size: var(--font-tags);
 }
 .search-suggestions span {
@@ -252,15 +287,11 @@ button.find {
   text-transform: capitalize;
 }
 
-.search-options {
-  display: flex;
-  align-items: center;
-
-  gap: 30px;
-}
-
 .search-option {
   text-transform: lowercase;
+}
+.search-option button {
+  background-color: transparent;
 }
 
 /* Game filters */
@@ -268,67 +299,97 @@ button.find {
 .main-nav {
   font-size: var(--font-nav);
   justify-content: space-between;
-  height: 60px;
+  min-height: 60px;
   display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
   padding: 10px 0;
   align-items: center;
 }
-.main-nav li:not(:last-child) {
-  border-right: 1px solid var(--border);
-}
-
-.main-nav * {
+.main-nav li,
+.main-nav button,
+.main-sort {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 100%;
+}
+
+.game-filters {
+  display: grid;
+  grid-template-columns: 130px repeat(3, minmax(0, 1fr));
+  width: min(100%, 676px);
+  flex: 0 1 auto;
+  gap: 12px;
 }
 
 .main-nav button {
-  width: 90%;
+  width: 100%;
+  min-height: 44px;
+  padding: 8px;
   gap: 10px;
+  background-color: transparent;
+  transition: background-color 0.2s;
+}
+
+.main-nav button:not(.active):hover {
+  background-color: var(--card-bg-hover);
 }
 .genre-icon {
   width: 15px;
   height: 15px;
 }
 
-.active {
+.main-nav .active {
   background-color: var(--active-bg);
   transition: background-color 0.5s ease;
 }
-.active:hover {
+.main-nav .active:hover {
   background-color: var(--active-bg-chosen);
 }
 
-.inactive {
-  background-color: var(--bg);
-}
-
-.inactive:hover {
-  color: var(--active-bg);
-}
-
 .main-nav li {
-  width: 150px;
+  min-width: 0;
 }
 
-select {
+.game-filters select {
+  width: 100%;
+  min-width: 0;
+  min-height: 44px;
+  padding: 8px 12px;
+  border-left: 1px solid var(--border);
+  background-color: var(--bg);
+  font-size: var(--font-nav);
+}
+
+.main-sort {
+  gap: 8px;
+  margin-left: auto;
+  min-height: 44px;
+  max-width: 100%;
+}
+
+.main-sort label {
+  flex-shrink: 0;
+}
+
+.main-sort select {
+  min-height: 44px;
+  min-width: 0;
   background-color: transparent;
 }
 
 /* Game cards */
 #cardsList {
-  display: flex;
-  flex-flow: wrap;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
   gap: 20px;
 }
 
 .card {
   display: flex;
   flex-direction: column;
-  width: 343px;
-  height: 320px;
+  min-width: 0;
+  min-height: 320px;
   background-color: var(--card-bg);
   border: 2px solid var(--border);
   border-radius: 2px;
@@ -346,23 +407,28 @@ select {
   border-bottom: 2px solid var(--border);
   display: block;
   width: 100%;
+  aspect-ratio: 16 / 9;
+  flex-shrink: 0;
   object-fit: cover;
 }
 
 .card-info {
   display: flex;
-  height: 100%;
+  flex: 1;
   justify-content: center;
   flex-direction: column;
-  padding: 0 12px;
+  padding: 16px 12px;
   gap: 7px;
 }
 .card-title {
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  gap: 12px;
 }
 .card-rating {
   display: flex;
+  flex-shrink: 0;
   align-items: center;
   gap: 5px;
 }
@@ -377,10 +443,13 @@ select {
 }
 .card-title h2 {
   font-size: var(--font-card-title);
+  min-width: 0;
+  overflow-wrap: anywhere;
 }
 
 .card-tags {
   display: flex;
+  flex-wrap: wrap;
   font-size: var(--font-tags);
   gap: 10px;
 }
@@ -389,7 +458,7 @@ select {
   padding: 1px 10px;
   border: 1px solid var(--border);
   border-radius: 7px;
-  transition: all 0.3s;
+  transition: transform 0.3s;
 }
 
 .card-tag:hover {
@@ -398,4 +467,174 @@ select {
 
 .card-description {
   font-size: var(--font-card-description);
+  line-height: 1.4;
+}
+
+/* Responsive layout: no JavaScript menu required. */
+@media (max-width: 1100px) {
+  header {
+    background-position:
+      center,
+      center,
+      65% center;
+  }
+
+  .hero {
+    width: 55%;
+  }
+
+  .search-bar {
+    width: 100%;
+  }
+
+  .h-nav {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 44px;
+    gap: 12px 16px;
+  }
+
+  .h-nav-logo {
+    width: min(100%, 300px);
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  .h-nav-div {
+    display: contents;
+  }
+
+  .h-nav-div > ul:first-child {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    width: 100%;
+    justify-content: space-between;
+    gap: 8px;
+  }
+
+  .h-nav-div > ul:last-child {
+    grid-column: 2;
+    grid-row: 1;
+    gap: 0;
+  }
+
+  .h-nav-div > ul:last-child > li:first-child {
+    display: none;
+  }
+
+  .account {
+    width: 44px;
+    height: 44px;
+    padding: 0;
+    gap: 0;
+    position: relative;
+  }
+
+  /* Keep the account label available to assistive technology. */
+  .account p {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+  }
+
+  .h-nav a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+  }
+  .search-suggestions * {
+    font-size: var(--font-tags);
+  }
+}
+
+@media (max-width: 700px) {
+  header {
+    padding-top: 10px;
+    padding-bottom: 24px;
+    background-image:
+      linear-gradient(to bottom, #0d0e09b3, #0d0e0966 45%, #0d0e09 100%),
+      linear-gradient(to right, #0d0e09cc, #0d0e0966),
+      url("../assets/art/hero-castle.png");
+    background-position:
+      center,
+      center,
+      70% center;
+  }
+
+  .hero {
+    width: 100%;
+    min-height: 0;
+    padding: 28px 0 16px;
+  }
+
+  .hero h1 {
+    font-size: clamp(28px, 7.5vw, 52px);
+    line-height: 1;
+  }
+
+  .hero p {
+    font-size: var(--font-body);
+    line-height: 1.5;
+  }
+
+  .search-bar input {
+    font-size: 16px;
+  }
+
+  .search-bar button {
+    flex: 0 0 82px;
+  }
+
+  .search-suggestions,
+  .search-options {
+    gap: 12px;
+  }
+
+  .game-filters {
+    flex-basis: 100%;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
+  }
+
+  .game-filters li:nth-child(3) select {
+    border-left: 0;
+  }
+
+  .main-sort {
+    width: 100%;
+    justify-content: flex-end;
+  }
+  .search-suggestions {
+    display: none;
+  }
+}
+
+@media (hover: none), (pointer: coarse) {
+  .h-nav-logo:hover,
+  .find:hover,
+  .card:hover,
+  .card-tag:hover {
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .h-nav-logo,
+  .find,
+  .search-bar button,
+  .main-nav .active,
+  .card,
+  .card-tag {
+    transition: none;
+  }
+
+  .h-nav-logo:hover,
+  .find:hover,
+  .card:hover,
+  .card-tag:hover {
+    transform: none;
+  }
 }
