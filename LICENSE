@@ -11,12 +11,18 @@ potuzhnyj@protonmail.com
 
 THIRD-PARTY MATERIALS
 
-The font obtained from JDGraphics on FontSpace is excluded from the ownership claim and restrictions above. It remains the property of its respective rights holder and is subject to its own license terms.
+The bundled Minecraft font files by JDGraphics are excluded from the ownership claim and restrictions above:
+
+- assets/fonts/MinecraftRegular-Bmg3.otf
+- assets/fonts/MinecraftBold-nMK1.otf
+
+The upstream FontSpace listing identifies this font as "Public Domain". This statement records the upstream designation; it does not apply the project's proprietary restrictions to the font.
 
 Font author/source:
 https://www.fontspace.com/jdgraphics
+https://www.fontspace.com/minecraft-font-f28180
 
-No additional rights to that font are granted by this notice.
+See THIRD_PARTY_NOTICES.md for the font attribution and source information. No additional rights to third-party materials are granted by this project notice.
 
 DISCLAIMER
 

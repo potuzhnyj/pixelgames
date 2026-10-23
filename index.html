@@ -8,17 +8,18 @@
     <link rel="icon" type="image/x-icon" href="assets/logo/icon.ico" />
   </head>
   <body>
+    <!-- Static visual mockup: search, filters and account are presentation only. -->
     <header>
       <nav class="h-nav" aria-label="Main navigation">
         <img class="h-nav-logo" src="assets/logo/logo.png" alt="pixelgames" />
         <div class="h-nav-div">
           <ul>
             <li><a href="index.html">Games</a></li>
-            <li><a href="blog.html">Forum</a></li>
+            <li><a role="link" aria-disabled="true" title="Visual preview only">Forum</a></li>
 
-            <li><a href="articles.html">Articles</a></li>
+            <li><a role="link" aria-disabled="true" title="Visual preview only">Articles</a></li>
 
-            <li><a href="about.html">About</a></li>
+            <li><a role="link" aria-disabled="true" title="Visual preview only">About</a></li>
           </ul>
           <ul>
             <li>
@@ -66,7 +67,13 @@
 
           <div class="search-suggestions">
             <span>Try:</span>
-            <ul id="search-recommendations" class="search-options"></ul>
+            <ul class="search-options">
+              <li class="search-option"><button type="button">RPG</button></li>
+              <li class="search-option"><button type="button">Action</button></li>
+              <li class="search-option"><button type="button">Adventure</button></li>
+              <li class="search-option"><button type="button">Co-op</button></li>
+              <li class="search-option"><button type="button">Open World</button></li>
+            </ul>
           </div>
         </div>
       </section>
@@ -124,11 +131,299 @@
           </select>
         </div>
       </nav>
-      <div id="cardsList" class="cards"></div>
+      <div id="cardsList" class="cards">
+        <div class="card">
+          <img class="card-image" src="./assets/covers/01-ashen-horizons.webp" alt="Ashen Horizons cover" />
+          <div class="card-info">
+            <div class="card-title">
+              <h2>Ashen Horizons</h2>
+              <div class="card-rating">
+                <img class="card-rating-icon" src="./assets/icons/ui/rating.svg" alt="" />
+                <span class="card-rating-num">9.1</span>
+              </div>
+            </div>
+            <ul class="card-tags">
+                <li class="card-tag">RPG</li>
+                <li class="card-tag">Open World</li>
+                <li class="card-tag">Single-player</li>
+            </ul>
+            <p class="card-description">Wander through the ashes of a fallen kingdom. Discover what survived, and decide what deserves to live again.</p>
+          </div>
+        </div>
+        <div class="card">
+          <img class="card-image" src="./assets/covers/02-blood-and-blossom.webp" alt="Blood &amp; Blossom cover" />
+          <div class="card-info">
+            <div class="card-title">
+              <h2>Blood &amp; Blossom</h2>
+              <div class="card-rating">
+                <img class="card-rating-icon" src="./assets/icons/ui/rating.svg" alt="" />
+                <span class="card-rating-num">8.8</span>
+              </div>
+            </div>
+            <ul class="card-tags">
+                <li class="card-tag">Action</li>
+                <li class="card-tag">Story Rich</li>
+                <li class="card-tag">Single-player</li>
+            </ul>
+            <p class="card-description">Follow a wandering samurai through a land torn apart by old loyalties. Every duel brings you closer to someone you once called a friend.</p>
+          </div>
+        </div>
+        <div class="card">
+          <img class="card-image" src="./assets/covers/03-the-fifth-echo.webp" alt="The Fifth Echo cover" />
+          <div class="card-info">
+            <div class="card-title">
+              <h2>The Fifth Echo</h2>
+              <div class="card-rating">
+                <img class="card-rating-icon" src="./assets/icons/ui/rating.svg" alt="" />
+                <span class="card-rating-num">9</span>
+              </div>
+            </div>
+            <ul class="card-tags">
+                <li class="card-tag">Adventure</li>
+                <li class="card-tag">Puzzle</li>
+                <li class="card-tag">Co-op</li>
+            </ul>
+            <p class="card-description">Cross the desert toward a monument no one remembers building. Solve its ancient puzzles to discover why it has been waiting for you.</p>
+          </div>
+        </div>
+        <div class="card">
+          <img class="card-image" src="./assets/covers/04-iron-reach.webp" alt="Iron Reach cover" />
+          <div class="card-info">
+            <div class="card-title">
+              <h2>Iron Reach</h2>
+              <div class="card-rating">
+                <img class="card-rating-icon" src="./assets/icons/ui/rating.svg" alt="" />
+                <span class="card-rating-num">8.6</span>
+              </div>
+            </div>
+            <ul class="card-tags">
+                <li class="card-tag">Strategy</li>
+                <li class="card-tag">Base Building</li>
+                <li class="card-tag">Co-op</li>
+            </ul>
+            <p class="card-description">Build a home on the shoulders of a wandering machine. Keep your people safe as you search for somewhere worth stopping.</p>
+          </div>
+        </div>
+        <div class="card">
+          <img class="card-image" src="./assets/covers/05-maple-hollow.webp" alt="Maple Hollow cover" />
+          <div class="card-info">
+            <div class="card-title">
+              <h2>Maple Hollow</h2>
+              <div class="card-rating">
+                <img class="card-rating-icon" src="./assets/icons/ui/rating.svg" alt="" />
+                <span class="card-rating-num">8.7</span>
+              </div>
+            </div>
+            <ul class="card-tags">
+                <li class="card-tag">Simulation</li>
+                <li class="card-tag">Crafting</li>
+                <li class="card-tag">Co-op</li>
+            </ul>
+            <p class="card-description">Bring an old lakeside cottage back to life with furniture and tools you craft yourself. Grow a garden, meet your neighbors, and find your own pace.</p>
+          </div>
+        </div>
+        <div class="card">
+          <img class="card-image" src="./assets/covers/06-the-sunken-bell.webp" alt="The Sunken Bell cover" />
+          <div class="card-info">
+            <div class="card-title">
+              <h2>The Sunken Bell</h2>
+              <div class="card-rating">
+                <img class="card-rating-icon" src="./assets/icons/ui/rating.svg" alt="" />
+                <span class="card-rating-num">8.9</span>
+              </div>
+            </div>
+            <ul class="card-tags">
+                <li class="card-tag">Adventure</li>
+                <li class="card-tag">Exploration</li>
+                <li class="card-tag">Single-player</li>
+            </ul>
+            <p class="card-description">Dive into a drowned city where a bell still rings beneath the waves. Follow its sound through streets the ocean has claimed.</p>
+          </div>
+        </div>
+        <div class="card">
+          <img class="card-image" src="./assets/covers/07-frostline.webp" alt="Frostline cover" />
+          <div class="card-info">
+            <div class="card-title">
+              <h2>Frostline</h2>
+              <div class="card-rating">
+                <img class="card-rating-icon" src="./assets/icons/ui/rating.svg" alt="" />
+                <span class="card-rating-num">8.4</span>
+              </div>
+            </div>
+            <ul class="card-tags">
+                <li class="card-tag">Survival</li>
+                <li class="card-tag">Crafting</li>
+                <li class="card-tag">Co-op</li>
+            </ul>
+            <p class="card-description">Seek shelter in a mountain fortress as winter closes every road behind you. Craft supplies, keep the fires burning, and prepare for the next storm.</p>
+          </div>
+        </div>
+        <div class="card">
+          <img class="card-image" src="./assets/covers/08-orbital-bones.webp" alt="Orbital Bones cover" />
+          <div class="card-info">
+            <div class="card-title">
+              <h2>Orbital Bones</h2>
+              <div class="card-rating">
+                <img class="card-rating-icon" src="./assets/icons/ui/rating.svg" alt="" />
+                <span class="card-rating-num">8.8</span>
+              </div>
+            </div>
+            <ul class="card-tags">
+                <li class="card-tag">Strategy</li>
+                <li class="card-tag">Base Building</li>
+                <li class="card-tag">Multiplayer</li>
+            </ul>
+            <p class="card-description">Build an outpost among the remains of a forgotten space station. Compete for salvage and expand your foothold above an uncharted planet.</p>
+          </div>
+        </div>
+        <div class="card">
+          <img class="card-image" src="./assets/covers/09-neon-requiem.webp" alt="Neon Requiem cover" />
+          <div class="card-info">
+            <div class="card-title">
+              <h2>Neon Requiem</h2>
+              <div class="card-rating">
+                <img class="card-rating-icon" src="./assets/icons/ui/rating.svg" alt="" />
+                <span class="card-rating-num">8.5</span>
+              </div>
+            </div>
+            <ul class="card-tags">
+                <li class="card-tag">Adventure</li>
+                <li class="card-tag">Story Rich</li>
+                <li class="card-tag">Single-player</li>
+            </ul>
+            <p class="card-description">Trace a missing person&#x27;s last footsteps through rain-soaked neon streets. In a city that records everything, someone has learned how to disappear.</p>
+          </div>
+        </div>
+        <div class="card">
+          <img class="card-image" src="./assets/covers/10-dust-circuit.webp" alt="Dust Circuit cover" />
+          <div class="card-info">
+            <div class="card-title">
+              <h2>Dust Circuit</h2>
+              <div class="card-rating">
+                <img class="card-rating-icon" src="./assets/icons/ui/rating.svg" alt="" />
+                <span class="card-rating-num">8.2</span>
+              </div>
+            </div>
+            <ul class="card-tags">
+                <li class="card-tag">Racing</li>
+                <li class="card-tag">Open World</li>
+                <li class="card-tag">Multiplayer</li>
+            </ul>
+            <p class="card-description">Race battered machines across desert highways and canyon trails. Learn every shortcut, risk the next jump, and leave your rivals in the dust.</p>
+          </div>
+        </div>
+        <div class="card">
+          <img class="card-image" src="./assets/covers/11-moss-and-moon.webp" alt="Moss &amp; Moon cover" />
+          <div class="card-info">
+            <div class="card-title">
+              <h2>Moss &amp; Moon</h2>
+              <div class="card-rating">
+                <img class="card-rating-icon" src="./assets/icons/ui/rating.svg" alt="" />
+                <span class="card-rating-num">8.6</span>
+              </div>
+            </div>
+            <ul class="card-tags">
+                <li class="card-tag">Adventure</li>
+                <li class="card-tag">Puzzle</li>
+                <li class="card-tag">Single-player</li>
+            </ul>
+            <p class="card-description">Follow a trail of tiny lights into a forest waking under the moon. Solve woodland puzzles and help its peculiar inhabitants find their way home.</p>
+          </div>
+        </div>
+        <div class="card">
+          <img class="card-image" src="./assets/covers/12-blackwater-harbor.webp" alt="Blackwater Harbor cover" />
+          <div class="card-info">
+            <div class="card-title">
+              <h2>Blackwater Harbor</h2>
+              <div class="card-rating">
+                <img class="card-rating-icon" src="./assets/icons/ui/rating.svg" alt="" />
+                <span class="card-rating-num">8.3</span>
+              </div>
+            </div>
+            <ul class="card-tags">
+                <li class="card-tag">Adventure</li>
+                <li class="card-tag">Story Rich</li>
+                <li class="card-tag">Multiplayer</li>
+            </ul>
+            <p class="card-description">Return to a harbor where an empty ship arrives with the evening fog. Search its decks for clues before the tide carries it away.</p>
+          </div>
+        </div>
+        <div class="card">
+          <img class="card-image" src="./assets/covers/13-cinder-vault.webp" alt="Cinder Vault cover" />
+          <div class="card-info">
+            <div class="card-title">
+              <h2>Cinder Vault</h2>
+              <div class="card-rating">
+                <img class="card-rating-icon" src="./assets/icons/ui/rating.svg" alt="" />
+                <span class="card-rating-num">8.7</span>
+              </div>
+            </div>
+            <ul class="card-tags">
+                <li class="card-tag">Action</li>
+                <li class="card-tag">Exploration</li>
+                <li class="card-tag">Co-op</li>
+            </ul>
+            <p class="card-description">Descend into a vault buried beneath a ruined city. Fight your way past its guardians and uncover what they were built to protect.</p>
+          </div>
+        </div>
+        <div class="card">
+          <img class="card-image" src="./assets/covers/14-the-last-orchard.webp" alt="The Last Orchard cover" />
+          <div class="card-info">
+            <div class="card-title">
+              <h2>The Last Orchard</h2>
+              <div class="card-rating">
+                <img class="card-rating-icon" src="./assets/icons/ui/rating.svg" alt="" />
+                <span class="card-rating-num">8.4</span>
+              </div>
+            </div>
+            <ul class="card-tags">
+                <li class="card-tag">Simulation</li>
+                <li class="card-tag">Crafting</li>
+                <li class="card-tag">Single-player</li>
+            </ul>
+            <p class="card-description">Restore an abandoned orchard with salvaged tools and handmade equipment. Share your harvest with passing strangers and give them a reason to stay.</p>
+          </div>
+        </div>
+        <div class="card">
+          <img class="card-image" src="./assets/covers/15-void-courier.webp" alt="Void Courier cover" />
+          <div class="card-info">
+            <div class="card-title">
+              <h2>Void Courier</h2>
+              <div class="card-rating">
+                <img class="card-rating-icon" src="./assets/icons/ui/rating.svg" alt="" />
+                <span class="card-rating-num">8.1</span>
+              </div>
+            </div>
+            <ul class="card-tags">
+                <li class="card-tag">Adventure</li>
+                <li class="card-tag">Exploration</li>
+                <li class="card-tag">Single-player</li>
+            </ul>
+            <p class="card-description">Carry a mysterious parcel to a colony beyond the mapped stars. Choose your route carefully, because the quietest signals may matter most.</p>
+          </div>
+        </div>
+        <div class="card">
+          <img class="card-image" src="./assets/covers/16-thorn-crown.webp" alt="Thorn Crown cover" />
+          <div class="card-info">
+            <div class="card-title">
+              <h2>Thorn Crown</h2>
+              <div class="card-rating">
+                <img class="card-rating-icon" src="./assets/icons/ui/rating.svg" alt="" />
+                <span class="card-rating-num">9.2</span>
+              </div>
+            </div>
+            <ul class="card-tags">
+                <li class="card-tag">RPG</li>
+                <li class="card-tag">Story Rich</li>
+                <li class="card-tag">Single-player</li>
+            </ul>
+            <p class="card-description">Enter a forest that has grown through the throne of a lost king. Unravel his last promise before you choose who inherits the crown.</p>
+          </div>
+        </div>
+      </div>
     </main>
     <footer>
       <div>pixelgames</div>
     </footer>
-    <script src="scripts/app.js"></script>
   </body>
 </html>

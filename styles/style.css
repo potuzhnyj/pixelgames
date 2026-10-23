@@ -15,22 +15,6 @@
   font-display: swap;
 }
 
-@font-face {
-  font-family: "Minecraft";
-  src: url("../assets/fonts/MinecraftItalic-R8Mo.otf") format("opentype");
-  font-weight: 400;
-  font-style: italic;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Minecraft";
-  src: url("../assets/fonts/MinecraftBoldItalic-1y1e.otf") format("opentype");
-  font-weight: 700;
-  font-style: italic;
-  font-display: swap;
-}
-
 /* Theme */
 :root {
   --bg: #0d0e09;
@@ -45,15 +29,12 @@
   --text-muted: #858580;
 
   --font-tags: 10px;
-  --font-footer: 10px;
   --font-nav: 12px;
   --font-card-description: 11px;
   --font-card-rating: 12px;
   --font-body: 14px;
   --font-input: 14px;
-  --font-button: 14px;
   --font-card-title: 16px;
-  --font-hero-title: clamp(28px, 4.2vw, 80px);
 
   --cursor-default: url("../assets/cursors/default.svg") 1 1, auto;
   --cursor-pointer: url("../assets/cursors/pointer.svg") 10 2, pointer;
