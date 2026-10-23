@@ -1,17 +1,28 @@
-# pixelgames — static mockup
+# pixelgames
 
-A visual website mockup built with plain HTML and CSS. Double-click `index.html` to open it in your browser. No Node.js, package installation, or server is required.
+A static game discovery website concept with a pixel-art aesthetic, built with HTML and CSS. The page features a fictional game catalog, a castle-themed hero section, and a responsive card layout.
 
-## Project files
+## Features
 
-- `index.html` — the page with all 16 game cards and sample search suggestions.
-- `styles/style.css` — styling, responsive layouts, and CSS animations.
-- `assets/` — images, icons, cursors, and the regular and bold fonts used by the page.
-- `LICENSE` — terms for the project's original materials: All rights reserved.
-- `THIRD_PARTY_NOTICES.md` — font attribution, source, and licensing information supplied by the provider.
+- 16 fictional game cards with cover art, ratings, tags, and descriptions.
+- Responsive layouts for desktop and mobile screens.
+- Custom typography, icons, and cursors.
+- CSS hover effects and support for reduced-motion preferences.
 
-Search, filters, sorting, and the account area are visual elements only. They do not change the game list or process data. Forum, Articles, and About are visual placeholders; those pages are not included in the original repository. Random search suggestions have been replaced with five fixed examples.
+Search, filters, sorting, account controls, and secondary navigation are visual placeholders. This project demonstrates the interface; it does not include application functionality or a backend. Game titles, descriptions, and ratings are demo content.
 
-JavaScript has been removed, and the cards are now written directly in HTML. Unused genre icons, the PNG site icon, and italic fonts have also been removed. The original GitHub version contained no Node.js setup, dependencies, or backend.
+## Preview
 
-Repository: https://github.com/potuzhnyj/pixelgames. This static mockup is based on commit `53793c8bed2e4e52ecc6a5c453a3d18914b2f7d7`. Earlier versions of the files can be viewed or restored through Git history.
+Clone the repository and open `index.html` in a browser. No installation or build step is required.
+
+## Built with
+
+- HTML5
+- CSS3, including Grid, Flexbox, and media queries
+- Local images, SVG icons, and fonts
+
+## License
+
+Copyright © 2026 Potuzhnyj. All rights reserved. See [LICENSE](LICENSE) for terms and permission inquiries.
+
+Third-party font attribution and licensing information are documented in [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
