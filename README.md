@@ -1,17 +1,17 @@
-# pixelgames — статичний макет
+# pixelgames — static mockup
 
-Візуальний зразок сайту на звичайних HTML і CSS. Відкрий `index.html` у браузері подвійним кліком — встановлювати Node.js, пакети чи запускати сервер не потрібно.
+A visual website mockup built with plain HTML and CSS. Double-click `index.html` to open it in your browser. No Node.js, package installation, or server is required.
 
-## Що залишилось
+## Project files
 
-- `index.html` — сторінка з усіма 16 картками ігор і прикладами підказок пошуку.
-- `styles/style.css` — оформлення, адаптивна верстка та CSS-анімації.
-- `assets/` — використані зображення, іконки, курсори та звичайний і жирний шрифти.
-- `LICENSE` — умови використання оригінальних матеріалів проєкту: All rights reserved.
-- `THIRD_PARTY_NOTICES.md` — авторство, джерело та зазначені постачальником умови використання шрифту.
+- `index.html` — the page with all 16 game cards and sample search suggestions.
+- `styles/style.css` — styling, responsive layouts, and CSS animations.
+- `assets/` — images, icons, cursors, and the regular and bold fonts used by the page.
+- `LICENSE` — terms for the project's original materials: All rights reserved.
+- `THIRD_PARTY_NOTICES.md` — font attribution, source, and licensing information supplied by the provider.
 
-Пошук, фільтри, сортування й акаунт залишені як елементи макета. Вони не змінюють список ігор і не працюють з даними. Пункти Forum, Articles та About — візуальні заглушки; цих сторінок у вихідному репозиторії немає. Випадкові підказки замінені п'ятьма постійними прикладами.
+Search, filters, sorting, and the account area are visual elements only. They do not change the game list or process data. Forum, Articles, and About are visual placeholders; those pages are not included in the original repository. Random search suggestions have been replaced with five fixed examples.
 
-JavaScript видалено; картки тепер записані безпосередньо в HTML. Також видалено невикористані іконки жанрів, PNG-іконку сайту та курсивні шрифти. У версії з GitHub не було Node.js, залежностей або серверної частини.
+JavaScript has been removed, and the cards are now written directly in HTML. Unused genre icons, the PNG site icon, and italic fonts have also been removed. The original GitHub version contained no Node.js setup, dependencies, or backend.
 
-Репозиторій: https://github.com/potuzhnyj/pixelgames. Статичний макет підготовлено на основі коміту `53793c8bed2e4e52ecc6a5c453a3d18914b2f7d7`. Історія Git дозволяє переглянути або відновити попередні версії файлів.
+Repository: https://github.com/potuzhnyj/pixelgames. This static mockup is based on commit `53793c8bed2e4e52ecc6a5c453a3d18914b2f7d7`. Earlier versions of the files can be viewed or restored through Git history.
